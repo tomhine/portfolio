@@ -1,0 +1,15 @@
+---
+import Link from "./ui/Link.astro";
+
+const links = ["home", "about", "projects", "skills"];
+---
+
+<nav>
+  <ul class="flex gap-4">
+    {links.map(link => (
+      <Link href={`/${link === 'home' ? '' : `#${link}`}`} styles="focus:text-white">
+        <li class="text-gray-400 hover:text-white transition-colors px-4 py-1 capitalize">{link}</li>
+      </Link>
+    ))}
+  </ul>
+</nav>
