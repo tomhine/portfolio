@@ -1,0 +1,12 @@
+---
+export interface Props {
+  href: string;
+  styles?: string;
+}
+
+const { href, styles } = Astro.props as Props;
+---
+
+<a href={href} class={`focus-visible:outline focus-visible:outline-primary-orange focus-visible:outline-1 rounded ${styles}`}>
+  <slot />
+</a>

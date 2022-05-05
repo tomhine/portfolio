@@ -1,0 +1,14 @@
+---
+import Link from "./Link.astro";
+
+export interface Props {
+  href: string;
+  styles?: string;
+}
+
+const { href, styles } = Astro.props as Props;
+---
+
+<Link href={href} styles={`px-4 py-3 rounded-md bg-primary-orange hover:bg-primary-orangehover text-white font-semibold ${styles}`}>
+  <slot />
+</Link>
