@@ -5,7 +5,7 @@ module.exports = {
       colors: {
         primary: {
           orange: "#e64b4a",
-          orangehover: '#b6352b',
+          orangehover: "#ce4441",
         },
         neutral: {
           light: "#30353c",

@@ -9,6 +9,17 @@ export interface Props {
 const { href, styles } = Astro.props as Props;
 ---
 
-<Link href={href} styles={`px-4 py-3 rounded-md bg-primary-orange hover:bg-primary-orangehover text-white font-semibold ${styles}`}>
+<Link
+  {href}
+  styles={`px-4 py-3 rounded-md bg-primary-orange hover:bg-primary-orangehover text-white font-semibold focus-visible:outline-white ${styles}`}
+  data-link-button
+  >
   <slot />
 </Link>
+
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.to('[data-link-button]', { duration: 2, rotate: 360 })
+</script>

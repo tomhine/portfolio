@@ -13,6 +13,7 @@
     "astro": "^1.0.0-beta.20"
   },
   "dependencies": {
-    "astro-icon": "^0.7.1"
+    "astro-icon": "^0.7.1",
+    "gsap": "^3.10.4"
   }
 }

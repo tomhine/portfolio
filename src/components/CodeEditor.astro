@@ -1,0 +1,24 @@
+<div 
+  class="h-80 w-[548px] content bg-neutral-dark rounded-lg border border-t-[28px] border-primary-orange shadow-2xl shadow-gray-300/10 p-4 grid grid-rows-6 gap-6"
+    data-code-editor
+  >
+  <div class="h-4 rounded-lg bg-white w-full" data-text="1"></div>
+  <div class="h-4 rounded-lg bg-emerald-500 w-2/5" data-text="2"></div>
+  <div class="h-4 rounded-lg bg-white w-4/5" data-text="2"></div>
+  <div class="h-4 rounded-lg bg-amber-500 w-full" data-text="2"></div>
+  <div class="h-4 rounded-lg bg-rose-500 w-1/5 justify-self-end" data-text="2"></div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+
+  // gsap.set("[data-code-editor]", { perspective: 400, rotateY: -15 })
+  gsap.from("[data-code-editor]", { duration: 0.7, y: 50, opacity: 0, delay: 0.5 })
+  gsap.from('[data-text]', {duration: 0.7, width: 0, stagger: 0.2, ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})", y: -500 })
+</script>
+
+<style>
+[data-code-editor] {
+  transform: perspective(400px) rotateY(-15deg);
+}
+</style>
