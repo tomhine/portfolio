@@ -14,19 +14,27 @@ const { title, imageSource, codeLink, liveLink } = Astro.props as Props;
 ---
 
 <article class="w-full rounded-lg border border-primary-orange">
-  <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg">
+  <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg" />
   <div class="p-4 flex flex-col bg-primary-orange rounded-b-md">
     <CardTitle>{title}</CardTitle>
     <slot />
     <div class="w-full items-center grid grid-cols-2 gap-4 justify-items-center pt-8">
-      <a href={liveLink} class="w-full p-2 bg-neutral-dark rounded-md flex items-center justify-center gap-4" target="_blank">
+      <a
+        href={liveLink}
+        class="w-full p-2 bg-neutral-dark hover:bg-neutral-light rounded-md flex items-center justify-center gap-4"
+        target="_blank"
+      >
         <GlobeIcon />
         Live site
       </a>
-      <a href={codeLink} class="w-full p-2 bg-neutral-dark rounded-md flex items-center justify-center gap-4" target="_blank">
+      <a
+        href={codeLink}
+        class="w-full p-2 bg-neutral-dark rounded-md hover:bg-neutral-light flex items-center justify-center gap-4"
+        target="_blank"
+      >
         <GitHubIcon />
         Git repo
       </a>
-    </div>  
+    </div>
   </div>
 </article>
