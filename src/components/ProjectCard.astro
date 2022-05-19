@@ -1,0 +1,32 @@
+---
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import GlobeIcon from "./icons/GlobeIcon.astro";
+import CardTitle from "./typography/CardTitle.astro";
+
+export interface Props {
+  title: string;
+  imageSource: string;
+  codeLink: string;
+  liveLink: string;
+}
+
+const { title, imageSource, codeLink, liveLink } = Astro.props as Props;
+---
+
+<article class="w-full rounded-lg border border-primary-orange">
+  <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg">
+  <div class="p-4 flex flex-col bg-primary-orange rounded-b-md">
+    <CardTitle>{title}</CardTitle>
+    <slot />
+    <div class="w-full items-center grid grid-cols-2 gap-4 justify-items-center pt-8">
+      <a href={liveLink} class="w-full p-2 bg-neutral-dark rounded-md flex items-center justify-center gap-4">
+        <GlobeIcon />
+        Live site
+      </a>
+      <a href={codeLink} class="w-full p-2 bg-neutral-dark rounded-md flex items-center justify-center gap-4">
+        <GitHubIcon />
+        Git repo
+      </a>
+    </div>  
+  </div>
+</article>

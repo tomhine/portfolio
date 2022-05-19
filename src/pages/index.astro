@@ -2,24 +2,42 @@
 import CodeEditor from "../components/CodeEditor.astro";
 import Layout from "../components/Layout.astro";
 import ButtonLink from "../components/ui/ButtonLink.astro";
+import SectionTitle from "../components/typography/SectionTitle.astro";
+import CardTitle from "../components/typography/CardTitle.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="flex flex-col max-w-7xl w-full mx-auto mt-32">
-    <section class="grid grid-cols-2 gap-4 mt-12">
-      <div class="space-y-1 mt-10" data-info>
+<Layout>
+  <main class="flex flex-col max-w-7xl w-full mx-auto">
+  <!-- Intro section -->
+    <section class="h-screen min-h-fit grid grid-cols-2 items-center gap-4" id="home">
+      <div class="space-y-2 mt-10" data-info>
         <h3 class="text-3xl font-medium text-primary-orange selection:bg-white">Hi! My name's</h3>
         <h2 class="text-7xl font-bold selection:bg-primary-orange">Tom Hine</h2>
         <p
-          class="text-gray-400 text-lg font-medium selection:bg-white selection:text-primary-orange"
+          class="text-gray-400 text-lg font-medium selection:bg-white selection:text-primary-orange line-through opacity-50"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
-        <div class="pt-8">
+        <div class="pt-12">
           <ButtonLink href="#projects">Go to projects</ButtonLink>
         </div>
       </div>
       <CodeEditor />
+    </section>
+
+    <!-- Projects section -->
+    <section class="h-screen min-h-fit pt-14" id="projects">
+      <SectionTitle>Projects</SectionTitle>
+      <div class="grid grid-cols-2 gap-8 items-center justify-items-center px-4 py-8" data-project-grid>
+        <ProjectCard title="DEV Blog Clone" imageSource="images/project-shots/dev-to-clone.png" codeLink="https://github.com/tomhine/dev-to-clone" liveLink="">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates natus saepe vero soluta tempora illum perspiciatis dolor dolorum similique repellendus nisi eaque officiis fugit obcaecati reiciendis nostrum fuga, iste quaerat!</p>
+        </ProjectCard>
+
+        <ProjectCard title="Ecommerce Product Page" imageSource="images/project-shots/ecomm-page.png" codeLink="https://github.com/tomhine/fm-ecomm-prod-page" liveLink="">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates natus saepe vero soluta tempora illum perspiciatis dolor dolorum similique repellendus nisi eaque officiis fugit obcaecati reiciendis nostrum fuga, iste quaerat!</p>
+        </ProjectCard>
+      </div>
     </section>
   </main>
 </Layout>
@@ -27,5 +45,5 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 <script>
   import { gsap } from "gsap";
 
-  gsap.from("[data-info]", { duration: 0.7, y: 50, opacity: 0 })
+  gsap.from("[data-info]", { duration: 0.7, y: 50, opacity: 0, stagger: 0.2 })
 </script>
