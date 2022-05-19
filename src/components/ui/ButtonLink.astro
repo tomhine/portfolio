@@ -16,10 +16,3 @@ const { href, styles } = Astro.props as Props;
   >
   <slot />
 </Link>
-
-
-<script>
-  import { gsap } from "gsap";
-
-  gsap.to('[data-link-button]', { duration: 2, rotate: 360 })
-</script>
