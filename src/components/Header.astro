@@ -1,9 +1,10 @@
 ---
 import Navbar from "./Navbar.astro";
+import SocialLinks from "./SocialLinks.astro";
 import Link from "./ui/Link.astro";
 ---
 
-<header class="w-full h-20 flex items-center justify-center top-0 fixed bg-neutral-dark">
+<header class="w-full h-20 flex items-center justify-center top-0 fixed z-20 bg-neutral-dark">
   <div
     class="w-full h-full max-w-[1440px] flex items-center justify-between border-b border-primary-orange px-4"
   >
@@ -13,5 +14,23 @@ import Link from "./ui/Link.astro";
       </h1>
     </Link>
     <Navbar />
+    <SocialLinks />
   </div>
 </header>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("header", { 
+    duration: 0.5,
+    border: 0, 
+    height: 48, 
+    scrollTrigger: {
+      trigger: "#projects",
+      toggleActions: "play none none reverse",
+      }
+    });
+</script>
