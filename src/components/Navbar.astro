@@ -4,7 +4,7 @@ import Link from "./ui/Link.astro";
 const links = ["home", "about", "projects", "skills"];
 ---
 
-<nav>
+<nav class="hidden lg:block">
   <ul class="flex gap-4">
     {links.map(link => (
       <Link href={`#${link}`} styles="focus:text-white">
