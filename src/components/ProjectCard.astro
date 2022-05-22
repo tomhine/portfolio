@@ -14,7 +14,9 @@ const { title, imageSource, codeLink, liveLink } = Astro.props as Props;
 ---
 
 <article class="w-full rounded-lg border border-primary-orange">
-  <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg" />
+  <a href={liveLink} target="_blank">
+    <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg" />
+  </a>
   <div class="p-4 flex flex-col bg-primary-orange rounded-b-md">
     <CardTitle>{title}</CardTitle>
     <slot />
