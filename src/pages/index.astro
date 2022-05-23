@@ -4,6 +4,7 @@ import Layout from "../components/Layout.astro";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import SectionTitle from "../components/typography/SectionTitle.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ScreenSection from "../components/ui/ScreenSection.astro";
 ---
 
 <Layout>
@@ -17,9 +18,9 @@ import ProjectCard from "../components/ProjectCard.astro";
         <h3 class="text-3xl font-medium text-primary-orange selection:bg-white">Hi! My name's</h3>
         <h2 class="text-7xl font-bold selection:bg-primary-orange">Tom Hine</h2>
         <p
-          class="text-gray-400 text-lg font-medium selection:bg-white selection:text-primary-orange line-through opacity-50"
+          class="text-gray-400 text-lg font-medium selection:bg-white selection:text-primary-orange opacity-80"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          I'm an aspiring Frontend Developer with a passion for tech!
         </p>
         <div class="pt-12">
           <ButtonLink href="#projects">Go to projects</ButtonLink>
@@ -29,7 +30,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     </section>
 
     <!-- Projects section -->
-    <section class="h-screen min-h-fit pt-14 px-4 lg:px-8" id="projects">
+    <ScreenSection id="projects">
       <SectionTitle>Projects</SectionTitle>
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-items-center py-12"
@@ -87,7 +88,8 @@ import ProjectCard from "../components/ProjectCard.astro";
           </p>
         </ProjectCard>
       </div>
-    </section>
+    </ScreenSection>
+    <ScreenSection id="skills" />
   </main>
 </Layout>
 
