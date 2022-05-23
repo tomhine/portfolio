@@ -1,4 +1,5 @@
 ---
+import MenuIcon from "./icons/MenuIcon.astro";
 import Navbar from "./Navbar.astro";
 import SocialLinks from "./SocialLinks.astro";
 import Link from "./ui/Link.astro";
@@ -14,7 +15,14 @@ import Link from "./ui/Link.astro";
       </h1>
     </Link>
     <Navbar />
-    <SocialLinks />
+    <div class="flex items-center gap-6">
+      <SocialLinks />
+
+      <!-- Menu icon is hidden above md: -->
+      <button type="button" aria-label="Menu" class="p-2">
+        <MenuIcon />
+      </button>
+    </div>
   </div>
 </header>
 
@@ -24,13 +32,13 @@ import Link from "./ui/Link.astro";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to("header", { 
+  gsap.to("header", {
     duration: 0.5,
-    border: 0, 
-    height: 48, 
+    border: 0,
+    height: 48,
     scrollTrigger: {
       trigger: "#projects",
       toggleActions: "play none none reverse",
-      }
-    });
+    },
+  });
 </script>
