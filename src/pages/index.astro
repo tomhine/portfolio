@@ -5,6 +5,10 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import SectionTitle from "../components/typography/SectionTitle.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ScreenSection from "../components/ui/ScreenSection.astro";
+import devToImage from "../assets/project-shots/dev-to-clone.webp";
+import ecommPageImage from "../assets/project-shots/ecomm-page.webp";
+import jobListingsImage from "../assets/project-shots/filter-jobs.webp";
+import calcImage from "../assets/project-shots/calc.webp";
 ---
 
 <Layout>
@@ -38,7 +42,7 @@ import ScreenSection from "../components/ui/ScreenSection.astro";
       >
         <ProjectCard
           title="DEV Blog Clone"
-          imageSource="images/project-shots/dev-to-clone.webp"
+          imageSource={devToImage}
           codeLink="https://github.com/tomhine/dev-to-clone"
           liveLink="http://159.65.21.177/"
         >
@@ -51,7 +55,7 @@ import ScreenSection from "../components/ui/ScreenSection.astro";
 
         <ProjectCard
           title="Ecommerce Product Page"
-          imageSource="images/project-shots/ecomm-page.webp"
+          imageSource={ecommPageImage}
           codeLink="https://github.com/tomhine/fm-ecomm-prod-page"
           liveLink="https://fm-ecomm-prod-page.netlify.app/"
         >
@@ -64,7 +68,7 @@ import ScreenSection from "../components/ui/ScreenSection.astro";
 
         <ProjectCard
           title="Job Listings Page"
-          imageSource="images/project-shots/filter-jobs.webp"
+          imageSource={jobListingsImage}
           codeLink="https://github.com/tomhine/fm-job-listings-vue"
           liveLink="https://fm-job-listings.netlify.app/"
         >
@@ -76,8 +80,8 @@ import ScreenSection from "../components/ui/ScreenSection.astro";
         </ProjectCard>
 
         <ProjectCard
-          title="Javascript Caluculator"
-          imageSource="images/project-shots/calc.webp"
+          title="Javascript Calculator"
+          imageSource={calcImage}
           codeLink="https://github.com/tomhine/calc"
           liveLink="https://tomhine.github.io/calc/"
         >
