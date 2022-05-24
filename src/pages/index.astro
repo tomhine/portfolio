@@ -42,6 +42,7 @@ import calcImage from "../assets/project-shots/calc.webp";
       >
         <ProjectCard
           title="DEV Blog Clone"
+          id="dev-clone"
           imageSource={devToImage}
           codeLink="https://github.com/tomhine/dev-to-clone"
           liveLink="http://159.65.21.177/"
@@ -55,6 +56,7 @@ import calcImage from "../assets/project-shots/calc.webp";
 
         <ProjectCard
           title="Ecommerce Product Page"
+          id="ecomm-prod"
           imageSource={ecommPageImage}
           codeLink="https://github.com/tomhine/fm-ecomm-prod-page"
           liveLink="https://fm-ecomm-prod-page.netlify.app/"
@@ -68,6 +70,7 @@ import calcImage from "../assets/project-shots/calc.webp";
 
         <ProjectCard
           title="Job Listings Page"
+          id="job-list"
           imageSource={jobListingsImage}
           codeLink="https://github.com/tomhine/fm-job-listings-vue"
           liveLink="https://fm-job-listings.netlify.app/"
@@ -81,6 +84,7 @@ import calcImage from "../assets/project-shots/calc.webp";
 
         <ProjectCard
           title="Javascript Calculator"
+          id="calc"
           imageSource={calcImage}
           codeLink="https://github.com/tomhine/calc"
           liveLink="https://tomhine.github.io/calc/"
@@ -99,6 +103,25 @@ import calcImage from "../assets/project-shots/calc.webp";
 
 <script>
   import { gsap } from "gsap";
+  import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
 
   gsap.from("[data-info]", { duration: 0.7, y: 50, opacity: 0, stagger: 0.2 });
+
+  let projectCardTimeline = gsap.timeline({
+    delay: 0.05,
+    scrollTrigger: { trigger: "#projects", start: "top center" },
+  });
+
+  const timelineOptions = {
+    duration: 0.3,
+    y: 75,
+    opacity: 0,
+  };
+
+  projectCardTimeline.from("#dev-clone", timelineOptions);
+  projectCardTimeline.from("#ecomm-prod", timelineOptions);
+  projectCardTimeline.from("#job-list", timelineOptions);
+  projectCardTimeline.from("#calc", timelineOptions);
 </script>

@@ -5,15 +5,16 @@ import CardTitle from "./typography/CardTitle.astro";
 
 export interface Props {
   title: string;
+  id: string;
   imageSource: string;
   codeLink: string;
   liveLink: string;
 }
 
-const { title, imageSource, codeLink, liveLink } = Astro.props as Props;
+const { title, id, imageSource, codeLink, liveLink } = Astro.props as Props;
 ---
 
-<article class="w-full rounded-lg border border-primary-orange">
+<article class="w-full rounded-lg border border-primary-orange" {id}>
   <a href={liveLink} target="_blank">
     <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg" />
   </a>
