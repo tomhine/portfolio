@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "astro-icon": "^0.7.1",
-    "astro-imagetools": "^0.6.9",
     "gsap": "^3.10.4"
   }
 }
