@@ -3,7 +3,6 @@ import CodeEditor from "../components/CodeEditor.astro";
 import Layout from "../components/Layout.astro";
 import ButtonLink from "../components/ui/ButtonLink.astro";
 import SectionTitle from "../components/typography/SectionTitle.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import ScreenSection from "../components/ui/ScreenSection.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
 ---
@@ -33,7 +32,12 @@ import ProjectsSection from "../components/ProjectsSection.astro";
     <!-- Projects section -->
     <ProjectsSection />
 
-    <ScreenSection id="skills" />
+    <!-- About section -->
+    <ScreenSection id="about">
+      <SectionTitle>About</SectionTitle>
+      <p class="first-letter:text-2xl">Hi! Thanks for taking the time to check out my site.</p>
+      <p>As I mentioned above, I'm Tom Hine a</p>
+    </ScreenSection>
   </main>
 </Layout>
 
