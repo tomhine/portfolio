@@ -5,6 +5,7 @@ import ScreenSection from "./ui/ScreenSection.astro";
 import devToImage from "../assets/project-shots/dev-to-clone.webp";
 import ecommPageImage from "../assets/project-shots/ecomm-page.webp";
 import jobListingsImage from "../assets/project-shots/filter-jobs.webp";
+import ipTrackerImage from "../assets/project-shots/ip-tracker.webp";
 import calcImage from "../assets/project-shots/calc.webp";
 ---
 
@@ -57,6 +58,20 @@ import calcImage from "../assets/project-shots/calc.webp";
     </ProjectCard>
 
     <ProjectCard
+      title="IP Address Tracker"
+      id="ip-tracker"
+      imageSource={ipTrackerImage}
+      codeLink="https://github.com/tomhine/ip-tracker"
+      liveLink="https://tomhine.github.io/ip-tracker/"
+    >
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nam sed aliquam eos
+        nihil error consequuntur? Vel ex voluptate veritatis mollitia magnam officia nulla, eligendi
+        atque laborum eum, voluptates temporibus!
+      </p>
+    </ProjectCard>
+
+    <ProjectCard
       title="Javascript Calculator"
       id="calc"
       imageSource={calcImage}
@@ -84,7 +99,7 @@ import calcImage from "../assets/project-shots/calc.webp";
   });
 
   const timelineOptions = {
-    duration: 0.5,
+    duration: 0.4,
     y: 75,
     opacity: 0,
   };
@@ -92,5 +107,6 @@ import calcImage from "../assets/project-shots/calc.webp";
   projectCardTimeline.from("#dev-clone", timelineOptions);
   projectCardTimeline.from("#ecomm-prod", timelineOptions);
   projectCardTimeline.from("#job-list", timelineOptions);
+  projectCardTimeline.from("#ip-tracker", timelineOptions);
   projectCardTimeline.from("#calc", timelineOptions);
 </script>
