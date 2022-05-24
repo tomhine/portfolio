@@ -5,10 +5,7 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import SectionTitle from "../components/typography/SectionTitle.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ScreenSection from "../components/ui/ScreenSection.astro";
-import devToImage from "../assets/project-shots/dev-to-clone.webp";
-import ecommPageImage from "../assets/project-shots/ecomm-page.webp";
-import jobListingsImage from "../assets/project-shots/filter-jobs.webp";
-import calcImage from "../assets/project-shots/calc.webp";
+import ProjectsSection from "../components/ProjectsSection.astro";
 ---
 
 <Layout>
@@ -34,94 +31,14 @@ import calcImage from "../assets/project-shots/calc.webp";
     </section>
 
     <!-- Projects section -->
-    <ScreenSection id="projects">
-      <SectionTitle>Projects</SectionTitle>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-items-center py-12"
-        data-project-grid
-      >
-        <ProjectCard
-          title="DEV Blog Clone"
-          id="dev-clone"
-          imageSource={devToImage}
-          codeLink="https://github.com/tomhine/dev-to-clone"
-          liveLink="http://159.65.21.177/"
-        >
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates natus saepe vero
-            soluta tempora illum perspiciatis dolor dolorum similique repellendus nisi eaque
-            officiis fugit obcaecati reiciendis nostrum fuga, iste quaerat!
-          </p>
-        </ProjectCard>
+    <ProjectsSection />
 
-        <ProjectCard
-          title="Ecommerce Product Page"
-          id="ecomm-prod"
-          imageSource={ecommPageImage}
-          codeLink="https://github.com/tomhine/fm-ecomm-prod-page"
-          liveLink="https://fm-ecomm-prod-page.netlify.app/"
-        >
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nam sed aliquam eos
-            nihil error consequuntur? Vel ex voluptate veritatis mollitia magnam officia nulla,
-            eligendi atque laborum eum, voluptates temporibus!
-          </p>
-        </ProjectCard>
-
-        <ProjectCard
-          title="Job Listings Page"
-          id="job-list"
-          imageSource={jobListingsImage}
-          codeLink="https://github.com/tomhine/fm-job-listings-vue"
-          liveLink="https://fm-job-listings.netlify.app/"
-        >
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nam sed aliquam eos
-            nihil error consequuntur? Vel ex voluptate veritatis mollitia magnam officia nulla,
-            eligendi atque laborum eum, voluptates temporibus!
-          </p>
-        </ProjectCard>
-
-        <ProjectCard
-          title="Javascript Calculator"
-          id="calc"
-          imageSource={calcImage}
-          codeLink="https://github.com/tomhine/calc"
-          liveLink="https://tomhine.github.io/calc/"
-        >
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nam sed aliquam eos
-            nihil error consequuntur? Vel ex voluptate veritatis mollitia magnam officia nulla,
-            eligendi atque laborum eum, voluptates temporibus!
-          </p>
-        </ProjectCard>
-      </div>
-    </ScreenSection>
     <ScreenSection id="skills" />
   </main>
 </Layout>
 
 <script>
   import { gsap } from "gsap";
-  import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
 
   gsap.from("[data-info]", { duration: 0.7, y: 50, opacity: 0, stagger: 0.2 });
-
-  let projectCardTimeline = gsap.timeline({
-    delay: 0.05,
-    scrollTrigger: { trigger: "#projects", start: "top center" },
-  });
-
-  const timelineOptions = {
-    duration: 0.3,
-    y: 75,
-    opacity: 0,
-  };
-
-  projectCardTimeline.from("#dev-clone", timelineOptions);
-  projectCardTimeline.from("#ecomm-prod", timelineOptions);
-  projectCardTimeline.from("#job-list", timelineOptions);
-  projectCardTimeline.from("#calc", timelineOptions);
 </script>
