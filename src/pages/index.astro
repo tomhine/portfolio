@@ -6,6 +6,7 @@ import SectionTitle from "../components/typography/SectionTitle.astro";
 import ScreenSection from "../components/ui/ScreenSection.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
 import Paragraph from "../components/typography/Paragraph.astro";
+import SkillsGrid from "../components/SkillsGrid.astro";
 ---
 
 <Layout>
@@ -36,7 +37,7 @@ import Paragraph from "../components/typography/Paragraph.astro";
     <!-- About section -->
     <ScreenSection id="about">
       <SectionTitle>About</SectionTitle>
-      <div class="grid grid-cols-2">
+      <div class="grid md:grid-cols-2 gap-4 mt-16">
         <article>
           <Paragraph>Hi! Thanks for taking the time to check out my site.</Paragraph>
           <Paragraph
@@ -44,7 +45,9 @@ import Paragraph from "../components/typography/Paragraph.astro";
             the Frontend Web space.</Paragraph
           >
         </article>
-        <aside></aside>
+        <aside>
+          <SkillsGrid />
+        </aside>
       </div>
     </ScreenSection>
   </main>
