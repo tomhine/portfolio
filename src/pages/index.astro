@@ -5,6 +5,7 @@ import ButtonLink from "../components/ui/ButtonLink.astro";
 import SectionTitle from "../components/typography/SectionTitle.astro";
 import ScreenSection from "../components/ui/ScreenSection.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
+import Paragraph from "../components/typography/Paragraph.astro";
 ---
 
 <Layout>
@@ -35,8 +36,16 @@ import ProjectsSection from "../components/ProjectsSection.astro";
     <!-- About section -->
     <ScreenSection id="about">
       <SectionTitle>About</SectionTitle>
-      <p class="first-letter:text-2xl">Hi! Thanks for taking the time to check out my site.</p>
-      <p>As I mentioned above, I'm Tom Hine a</p>
+      <div class="grid grid-cols-2">
+        <article>
+          <Paragraph>Hi! Thanks for taking the time to check out my site.</Paragraph>
+          <Paragraph
+            >As I mentioned above, I'm Tom Hine. I've spent the last few years immersing myself into
+            the Frontend Web space.</Paragraph
+          >
+        </article>
+        <aside></aside>
+      </div>
     </ScreenSection>
   </main>
 </Layout>
