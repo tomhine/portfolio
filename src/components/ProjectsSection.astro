@@ -5,6 +5,7 @@ import ScreenSection from "./ui/ScreenSection.astro";
 import devToImage from "../assets/project-shots/dev-to-clone.webp";
 import ecommPageImage from "../assets/project-shots/ecomm-page.webp";
 import jobListingsImage from "../assets/project-shots/filter-jobs.webp";
+import todoAppImage from "../assets/project-shots/todo-app.webp";
 import ipTrackerImage from "../assets/project-shots/ip-tracker.webp";
 import calcImage from "../assets/project-shots/calc.webp";
 ---
@@ -70,6 +71,23 @@ import calcImage from "../assets/project-shots/calc.webp";
     </ProjectCard>
 
     <ProjectCard
+      title="Todo App"
+      id="todo-app"
+      imageSource={todoAppImage}
+      codeLink="https://github.com/tomhine/fm-todo-app"
+      liveLink="https://tomhine.github.io/fm-todo-app/"
+      css
+      js
+      react
+    >
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nam sed aliquam eos
+        nihil error consequuntur? Vel ex voluptate veritatis mollitia magnam officia nulla, eligendi
+        atque laborum eum, voluptates temporibus!
+      </p>
+    </ProjectCard>
+
+    <ProjectCard
       title="IP Address Tracker"
       id="ip-tracker"
       imageSource={ipTrackerImage}
@@ -125,6 +143,7 @@ import calcImage from "../assets/project-shots/calc.webp";
   projectCardTimeline.from("#dev-clone", timelineOptions);
   projectCardTimeline.from("#ecomm-prod", timelineOptions);
   projectCardTimeline.from("#job-list", timelineOptions);
+  projectCardTimeline.from("#todo-app", timelineOptions);
   projectCardTimeline.from("#ip-tracker", timelineOptions);
   projectCardTimeline.from("#calc", timelineOptions);
 </script>
