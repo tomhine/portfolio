@@ -1,0 +1,31 @@
+---
+import SkillsGrid from "./SkillsGrid.astro";
+import Paragraph from "./typography/Paragraph.astro";
+import SectionTitle from "./typography/SectionTitle.astro";
+import ScreenSection from "./ui/ScreenSection.astro";
+---
+
+<ScreenSection id="about" styles="min-h-[75vh]">
+  <SectionTitle>About</SectionTitle>
+  <div class="grid md:grid-cols-2 gap-4 mt-16">
+    <article class="mb-8 md:mb-0">
+      <Paragraph>Hi! Thanks for taking the time to check out my site.</Paragraph>
+      <Paragraph
+        >As I mentioned above, I'm Tom Hine. I've spent the last few years immersing myself into the
+        Frontend Web space.</Paragraph
+      >
+      <Paragraph
+        >I spent the first few months building my proficiency with HTML, CSS & JavaScript before
+        moving onto React. This is where things really clicked for me and I was hooked.</Paragraph
+      >
+      <Paragraph
+        >Since then, I've used Vue.js for a few projects and moved a little towards the back end
+        with Laravel. I've learnt a lot along the way and I'm really excited to carry on learning
+        well into the future.</Paragraph
+      >
+    </article>
+    <aside>
+      <SkillsGrid />
+    </aside>
+  </div>
+</ScreenSection>
