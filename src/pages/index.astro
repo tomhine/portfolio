@@ -2,11 +2,11 @@
 import CodeEditor from "../components/CodeEditor.astro";
 import Layout from "../components/Layout.astro";
 import ButtonLink from "../components/ui/ButtonLink.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import AboutSection from "../components/AboutSection.astro";
 import SectionTitle from "../components/typography/SectionTitle.astro";
 import ScreenSection from "../components/ui/ScreenSection.astro";
-import ProjectsSection from "../components/ProjectsSection.astro";
 import Paragraph from "../components/typography/Paragraph.astro";
-import SkillsGrid from "../components/SkillsGrid.astro";
 ---
 
 <Layout>
@@ -35,20 +35,18 @@ import SkillsGrid from "../components/SkillsGrid.astro";
     <ProjectsSection />
 
     <!-- About section -->
-    <ScreenSection id="about">
-      <SectionTitle>About</SectionTitle>
-      <div class="grid md:grid-cols-2 gap-4 mt-16">
-        <article>
-          <Paragraph>Hi! Thanks for taking the time to check out my site.</Paragraph>
-          <Paragraph
-            >As I mentioned above, I'm Tom Hine. I've spent the last few years immersing myself into
-            the Frontend Web space.</Paragraph
-          >
-        </article>
-        <aside>
-          <SkillsGrid />
-        </aside>
-      </div>
+    <AboutSection />
+
+    <!-- Contact section -->
+    <ScreenSection id="contact" styles="min-h-[50vh]">
+      <SectionTitle>Contact</SectionTitle>
+      <Paragraph styles="pt-12"
+        >I'm actively looking for work! If you're interested in hiring me, please email <span
+          class="text-primary-orange hover:border-b hover:border-primary-orange hover:text-white"
+          ><a href="mailto:tomhine992@gmail.com">tomhine992@gmail.com</a></span
+        >.</Paragraph
+      >
+      <Paragraph>I can't wait to hear from you!</Paragraph>
     </ScreenSection>
   </main>
 </Layout>
