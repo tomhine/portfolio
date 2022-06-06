@@ -32,13 +32,15 @@ export interface Props {
 const { title, id, imageSource, codeLink, liveLink, html, css, js, php, astro, laravel, react, vue, tailwind } = Astro.props as Props;
 ---
 
-<article class="w-full rounded-lg border border-primary-orange" {id}>
+<article class="w-full rounded-lg border border-primary-orange h-[630px]" {id}>
   <a href={liveLink} target="_blank">
     <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg" />
   </a>
   <div class="p-4 flex flex-col gap-2 rounded-b-md">
     <CardTitle>{title}</CardTitle>
-    <slot />
+    <div class="leading-7 h-[10.5rem]">
+      <slot />
+    </div>
     <div class="p-4 w-full flex items-center gap-4">
       { html && <HtmlIcon styles="h-8 w-8" />}
       { css && <CssIcon styles="h-8 w-8" />}
@@ -53,7 +55,7 @@ const { title, id, imageSource, codeLink, liveLink, html, css, js, php, astro, l
     <div class="w-full items-center grid grid-cols-2 gap-4 justify-items-center pt-4">
       <a
         href={liveLink}
-        class="w-full p-2 bg-primary-orange hover:bg-primary-orangehover rounded-md flex items-center justify-center gap-4"
+        class="w-full p-2 bg-primary-orange hover:bg-primary-orangehover rounded-md flex items-center justify-center gap-3"
         target="_blank"
       >
         <GlobeIcon />
@@ -61,11 +63,11 @@ const { title, id, imageSource, codeLink, liveLink, html, css, js, php, astro, l
       </a>
       <a
         href={codeLink}
-        class="w-full p-2 bg-primary-orange rounded-md hover:bg-primary-orangehover flex items-center justify-center gap-4"
+        class="w-full p-2 bg-primary-orange rounded-md hover:bg-primary-orangehover flex items-center justify-center gap-3"
         target="_blank"
       >
         <GitHubIcon />
-        Code
+        Source
       </a>
     </div>
   </div>
