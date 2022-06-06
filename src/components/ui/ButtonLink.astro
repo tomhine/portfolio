@@ -3,16 +3,18 @@ import Link from "./Link.astro";
 
 export interface Props {
   href: string;
+  alt?: boolean;
   styles?: string;
 }
 
-const { href, styles } = Astro.props as Props;
+const { href, alt, styles } = Astro.props as Props;
+
+const baseStyles =
+  "px-4 py-3 rounded-md text-white font-semibold focus-visible:outline-white border border-primary-orange";
+const mainStyles = "bg-primary-orange hover:bg-primary-orangehover";
+const altStyles = "hover:bg-primary-orangehover";
 ---
 
-<Link
-  {href}
-  styles={`px-4 py-3 rounded-md bg-primary-orange hover:bg-primary-orangehover text-white font-semibold focus-visible:outline-white ${styles}`}
-  data-link-button
-  >
+<Link {href} styles={`${baseStyles} ${alt ? altStyles : mainStyles} ${styles}`} data-link-button>
   <slot />
 </Link>
