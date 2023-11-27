@@ -1,4 +1,5 @@
 ---
+import { AstroAssets, Image } from "astro:assets";
 import AstroIcon from "./icons/AstroIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
@@ -15,7 +16,7 @@ import CardTitle from "./typography/CardTitle.astro";
 export interface Props {
   title: string;
   id: string;
-  imageSource: string;
+  imageSource: AstroAssets;
   codeLink: string;
   liveLink: string;
   html?: boolean;
@@ -34,7 +35,13 @@ const { title, id, imageSource, codeLink, liveLink, html, css, js, php, astro, l
 
 <article class="w-full rounded-lg border border-primary-orange h-[630px]" {id}>
   <a href={liveLink} target="_blank">
-    <img src={imageSource} alt={`${title} preview`} class="rounded-t-lg" />
+    <Image
+      src={imageSource}
+      alt={`${title} preview`}
+      widths={[400, 750, 480, imageSource.width]}
+      sizes={`(max-width: 425px) 400px, (max-width: 768px) 750px, (max-width: 1024px) 480px, ${imageSource.width}px`}
+      class="rounded-t-lg"
+    />
   </a>
   <div class="p-4 flex flex-col gap-2 rounded-b-md">
     <CardTitle>{title}</CardTitle>
