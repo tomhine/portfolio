@@ -25,19 +25,3 @@ import Link from "./ui/Link.astro";
     </div>
   </div>
 </header>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.to("header", {
-    duration: 0.5,
-    height: 48,
-    scrollTrigger: {
-      trigger: "#projects",
-      toggleActions: "play none none reverse",
-    },
-  });
-</script>

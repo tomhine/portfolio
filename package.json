@@ -17,8 +17,7 @@
     "prettier-plugin-tailwindcss": "^0.1.13"
   },
   "dependencies": {
-    "astro-icon": "^0.7.1",
-    "gsap": "^3.10.4"
+    "astro-icon": "^0.7.1"
   },
   "volta": {
     "node": "20.10.0",

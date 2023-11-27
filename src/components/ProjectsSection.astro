@@ -115,28 +115,3 @@ import calcImage from "../assets/project-shots/calc.webp";
     </ProjectCard>
   </div>
 </ScreenSection>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  let projectCardTimeline = gsap.timeline({
-    delay: 0.05,
-    scrollTrigger: { trigger: "#projects", start: "top center" },
-  });
-
-  const timelineOptions = {
-    duration: 0.4,
-    y: 75,
-    opacity: 0,
-  };
-
-  projectCardTimeline.from("#dev-clone", timelineOptions);
-  projectCardTimeline.from("#ecomm-prod", timelineOptions);
-  projectCardTimeline.from("#job-list", timelineOptions);
-  projectCardTimeline.from("#todo-app", timelineOptions);
-  projectCardTimeline.from("#ip-tracker", timelineOptions);
-  projectCardTimeline.from("#calc", timelineOptions);
-</script>
