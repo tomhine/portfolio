@@ -17,6 +17,7 @@
     "prettier-plugin-tailwindcss": "^0.1.13"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.0.8",
     "astro-icon": "^0.7.1"
   },
   "volta": {
