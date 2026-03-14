@@ -18,7 +18,7 @@ export interface Props {
   id: string;
   imageSource: AstroAssets;
   codeLink: string;
-  liveLink: string;
+  liveLink?: string;
   html?: boolean;
   css?: boolean;
   js?: boolean;
@@ -34,40 +34,40 @@ const { title, id, imageSource, codeLink, liveLink, html, css, js, php, astro, l
 ---
 
 <article class="w-full rounded-lg border border-primary-orange h-157.5" {id}>
-  <a href={liveLink} target="_blank">
-    <Image
-      src={imageSource}
-      alt={`${title} preview`}
-      widths={[400, 750, 480, imageSource.width]}
-      sizes={`(max-width: 425px) 400px, (max-width: 768px) 750px, (max-width: 1024px) 480px, ${imageSource.width}px`}
-      class="rounded-t-lg"
-    />
-  </a>
+  <Image
+    src={imageSource}
+    alt={`${title} preview`}
+    widths={[400, 750, 480, imageSource.width]}
+    sizes={`(max-width: 425px) 400px, (max-width: 768px) 750px, (max-width: 1024px) 480px, ${imageSource.width}px`}
+    class="rounded-t-lg"
+  />
   <div class="p-4 flex flex-col gap-2 rounded-b-md">
     <CardTitle>{title}</CardTitle>
     <div class="leading-7 h-42">
       <slot />
     </div>
     <div class="p-4 w-full flex items-center gap-4">
-      { html && <HtmlIcon styles="h-8 w-8" />}
-      { css && <CssIcon styles="h-8 w-8" />}
-      { js && <JavascriptIcon styles="h-8 w-8" />}
-      { php && <PhpIcon styles="h-8 w-8" />}
-      { astro && <AstroIcon styles="h-8 w-8" />}
-      { laravel && <LaravelIcon styles="h-8 w-8" />}
-      { react && <ReactIcon styles="h-8 w-8" />}
-      { vue && <VueIcon styles="h-8 w-8" />}
-      { tailwind && <TailwindIcon styles="h-8 w-8" />}
+      { html && <HtmlIcon styles="h-8 w-8" /> }
+      { css && <CssIcon styles="h-8 w-8" /> }
+      { js && <JavascriptIcon styles="h-8 w-8" /> }
+      { php && <PhpIcon styles="h-8 w-8" /> }
+      { astro && <AstroIcon styles="h-8 w-8" /> }
+      { laravel && <LaravelIcon styles="h-8 w-8" /> }
+      { react && <ReactIcon styles="h-8 w-8" /> }
+      { vue && <VueIcon styles="h-8 w-8" /> }
+      { tailwind && <TailwindIcon styles="h-8 w-8" /> }
     </div>
-    <div class="w-full items-center grid grid-cols-2 gap-4 justify-items-center pt-4">
-      <a
-        href={liveLink}
-        class="w-full p-2 text-black bg-primary-orange hover:bg-primary-orangehover rounded-md flex items-center justify-center gap-3"
-        target="_blank"
-      >
-        <GlobeIcon />
-        Live site
-      </a>
+    <div class={`w-full items-center grid grid-cols-${liveLink ? 2 : 1} gap-4 justify-items-center pt-4`}>
+      { liveLink &&
+        <a
+          href={liveLink}
+          class="w-full p-2 text-black bg-primary-orange hover:bg-primary-orangehover rounded-md flex items-center justify-center gap-3"
+          target="_blank"
+        >
+          <GlobeIcon />
+          Live site
+        </a>
+      }
       <a
         href={codeLink}
         class="w-full p-2 text-black bg-primary-orange rounded-md hover:bg-primary-orangehover flex items-center justify-center gap-3"
