@@ -5,11 +5,13 @@ const links = ["home", "projects", "about", "contact"];
 ---
 
 <nav class="hidden lg:block">
-  <ul class="flex gap-4">
+  <menu class="flex gap-4">
     {links.map(link => (
-      <Link href={`#${link}`} styles="focus:text-white">
-        <li class="text-gray-400 hover:text-white transition-colors px-4 py-1 capitalize">{link}</li>
-      </Link>
+      <li>
+        <Link href={`#${link}`} styles="focus:text-white text-gray-400 hover:text-white transition-colors px-4 py-1 capitalize">
+          {link}
+        </Link>
+      </li>
     ))}
-  </ul>
+  </menu>
 </nav>
