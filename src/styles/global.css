@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-orange: #e64b4a;
+  --color-primary-orangehover: #ce4441;
+
+  --color-neutral-light: #30353c;
+  --color-neutral-dark: #1a1c23;
+
+  --font-poppins: "Poppins", sans-serif;
+}
